@@ -10,8 +10,8 @@ def puts_separator
   puts '-' * 40
 end
 
-def authenticator
-  puts 'Autenticati!'
+def authenticate
+  puts 'Autenticati! (hai massimo 3 tentativi)'
   3.times do
     puts_separator()
 
@@ -27,12 +27,14 @@ def authenticator
     password = gets.chomp
     if user_record[:password].eql? password
       puts 'Daje, ora sei autenticato.'
-      break
+      return
     else 
       puts 'Password errata.'
       next
     end
   end
+  puts_separator()
+  puts 'Avevi 3 tentativi, sono finiti.'
 end
 
-authenticator()
+authenticate()
