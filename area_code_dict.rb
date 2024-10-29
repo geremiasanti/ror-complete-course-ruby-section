@@ -13,7 +13,7 @@ dial_book = {
  
 # Get city names from the hash
 def get_city_names(hash)
-  return hash.map { |cityname, _| "- #{cityname}" }.join("\n")
+  return hash.keys.map { |cityname| "- #{cityname}" }.join("\n")
 end
  
 # Get area code based on given hash and key
