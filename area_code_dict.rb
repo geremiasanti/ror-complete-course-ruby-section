@@ -31,6 +31,10 @@ loop do
   print 'city: '
   input = gets.chomp
 
-  area_code = get_area_code dial_book, input
-  puts "Area code for #{input} is: #{area_code}"
+  if dial_book.include? input
+    area_code = get_area_code dial_book, input
+    puts "Area code for #{input} is: #{area_code}"
+  else
+    puts "Invalid city name"
+  end
 end
